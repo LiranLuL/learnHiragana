@@ -1,0 +1,48 @@
+.IncorrectAnswer{
+    color: #c73636;
+}
+
+.CorrectAnswer{
+    color: #107910 !important;
+}
+
+.Variant{
+    font-weight: bold;
+    font-size: 20px;
+    color: #222831;
+    height: 5rem;
+    width: 5rem;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00ADB5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.ActiveVariant{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    flex-wrap:wrap;
+    height: 5rem;
+    width: 5rem;
+    background-color: #03c4f4;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.Variant:hover{
+    background-color: #03c4f4;
+}
+.Variant:active{
+    background-color: #03c4f4;
+}
+
+.Variants{
+    width: 20rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
