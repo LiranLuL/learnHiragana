@@ -6,3 +6,8 @@
     font-family: "Arial Black";
     font-size: 60px;
 }
+
+.correctAnswersCounter{
+    font-family: cursive;
+    color: #03A9F4;
+}

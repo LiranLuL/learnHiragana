@@ -1,3 +1,4 @@
+
 .IncorrectAnswer{
     color: #c73636;
 }
@@ -34,9 +35,7 @@
 .Variant:hover{
     background-color: #03c4f4;
 }
-.Variant:active{
-    background-color: #03c4f4;
-}
+
 
 .Variants{
     width: 20rem;

@@ -1,0 +1,50 @@
+.App {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #222831;
+}
+.ant-btn-primary {
+    background-color: #03A9F4;
+}
+.QuestionCard{
+    width: 80vw;
+    max-width: 600px;
+    height: 80vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.AnswerButton{
+    width: 50%;
+    color: #222831;
+    font-weight: bold;
+}
+
+.ScoreCounter{
+    color: #03A9F4;
+    font-family: cursive;
+    font-size: calc(100vw/16);
+    margin-bottom: 10vh;
+    animation: example-animation 2s;
+}
+
+
+@keyframes example-animation {
+    0% {
+        opacity: 0%;
+        transform: scale(20%) ;
+    }
+    100% {
+        opacity: 100%;
+        transform: scale(100%) ;
+
+    }
+}

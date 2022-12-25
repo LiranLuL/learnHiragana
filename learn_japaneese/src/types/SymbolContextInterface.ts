@@ -1,8 +1,10 @@
+import {selectedElement} from "../components/Variants";
+import {HiraganaSymbol} from "./HiraganaSymbol";
+
 export interface IQuestionSymbol {
     symbol?: Symbol | null;
     changeSymbol?: () => void;
-    changeVariant?: (variant:Symbol) => void;
-
+    setVariant?: (variant:any) => void;
 }
 
 export interface Symbol {

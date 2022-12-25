@@ -9,29 +9,28 @@ const {v4: uuidv4} = require('uuid');
 
 interface VariantsProps {
     anwerResult: boolean,
-    changeVariant: any;
+}
+
+export interface selectedElement {
+    element?: HiraganaSymbol,
+    index: number,
 }
 
 function Variants(props: VariantsProps) {
-    const changeVariant = props.changeVariant
     const questionContext = useContext(QuestionContext);
     const [variants, setVariants] = useState<HiraganaSymbol[] | null>([]);
-    const [active, setActive] = useState<number>(-1);
-
-    useEffect(()=>{
-    },[])
+    const [active, setActive] = useState<selectedElement>({index: -1});
 
     useEffect(() => {
         setVariants(generateVariants);
-        setActive(-1);
-
+        setActive({index: -1});
     }, [questionContext.symbol])
 
     function markAnswer(variant: HiraganaSymbol, index: number) {
-        if (questionContext.changeVariant) {
-            changeVariant(variant);
+        if (questionContext.setVariant) {
+            questionContext.setVariant(variant);
         }
-        setActive(index);
+        setActive({element: variant, index: index});
     }
 
     function checkVariants(variant: HiraganaSymbol) {
@@ -40,20 +39,19 @@ function Variants(props: VariantsProps) {
     }
 
     function isActive(index: number) {
-        if (index === active) {
+        if (index === active.index) {
             return "ActiveVariant"
         }
         return answerTypes.Default;
     }
 
     return <>
-        <span  className={"Variants"}>
+        <span className={"Variants"}>
             {variants?.map((variant, index) => {
                 return <div key={uuidv4()} onClick={() => markAnswer(variant, index)}
-                            className={isActive(index) + " " + checkVariants(variant) + " Variant"}>{variant.roumaji}</div>
+                            className={isActive(index) + " " + checkVariants(variant) + " Variant"}>{variant?.roumaji}</div>
             })}
         </span>
-
     </>
 }
 
